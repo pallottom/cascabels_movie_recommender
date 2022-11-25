@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+
+<html lang ="en" dir="ltr">
+
+	<head>
+		<meta charset="utf-8">
+		<title>{{title1}}</title>
+	</head>
+
+	<body> 
+		<div>
+			<style>
+		  div {
+			height: 70px;
+			width: 900px;
+			background: yellow;
+			position: fixed;
+			top: 0%;
+			left: 10%;
+		  }</style>    
+		  <h1 style="color:green;">Good monrning Guten Morgen Gunaydin Cascabel, Welcome!</h1>
+		  </div>
+
+		  <br> 
+		  <br>
+		  <br>
+		<p>Get <a href="/recommendations">film recommendations</a></p>
+
+		<form action="/recommendations">
+			<br>
+			{% for i in range(3)%}
+			<input type="text"
+				   name="title"
+				   placeholder="Movie title"
+				   required
+				   list="movies"
+			</input>
+			 <input type="text"
+				   name="rating"
+				   placeholder="1-5"
+				   required
+			</input>
+			<br>
+			<br>
+			{% endfor %}
+			<button type="submit">Show Recommendations</button>
+		</form>
+		<datalist id="movies">
+			{% for movie in movies%}
+			<option value="{{movie}}"></option>
+			{% endfor %}
+
+	</body>
+
+</html>
